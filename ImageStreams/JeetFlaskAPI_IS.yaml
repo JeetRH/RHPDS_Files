@@ -1,0 +1,71 @@
+kind: ImageStream
+apiVersion: image.openshift.io/v1
+metadata:
+  annotations:
+    app.openshift.io/vcs-ref: ''
+    app.openshift.io/vcs-uri: 'https://github.com/JeetRH/FlaskAPI.git'
+    openshift.io/generated-by: OpenShiftWebConsole
+  resourceVersion: '1844739'
+  name: flask-api-git
+  uid: 32a37650-a763-4a44-9ab6-caca09c0e879
+  creationTimestamp: '2022-02-11T01:48:14Z'
+  generation: 1
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: image.openshift.io/v1
+      time: '2022-02-11T01:48:14Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:app.openshift.io/vcs-ref': {}
+            'f:app.openshift.io/vcs-uri': {}
+            'f:openshift.io/generated-by': {}
+          'f:labels':
+            .: {}
+            'f:app': {}
+            'f:app.kubernetes.io/component': {}
+            'f:app.kubernetes.io/instance': {}
+            'f:app.kubernetes.io/name': {}
+            'f:app.kubernetes.io/part-of': {}
+            'f:app.openshift.io/runtime': {}
+            'f:app.openshift.io/runtime-version': {}
+  namespace: odh-j
+  labels:
+    app: flask-api-git
+    app.kubernetes.io/component: flask-api-git
+    app.kubernetes.io/instance: flask-api-git
+    app.kubernetes.io/name: flask-api-git
+    app.kubernetes.io/part-of: example-python-app
+    app.openshift.io/runtime: python
+    app.openshift.io/runtime-version: 3.8-ubi7
+spec:
+  lookupPolicy:
+    local: false
+status:
+  dockerImageRepository: 'image-registry.openshift-image-registry.svc:5000/odh-j/flask-api-git'
+  publicDockerImageRepository: >-
+    default-route-openshift-image-registry.apps.cluster-26e1.26e1.sandbox1210.opentlc.com/odh-j/flask-api-git
+  tags:
+    - tag: latest
+      items:
+        - created: '2022-02-11T02:37:13Z'
+          dockerImageReference: >-
+            image-registry.openshift-image-registry.svc:5000/odh-j/flask-api-git@sha256:ffe90001c8e63a712029d6ae40b619f5d3d8ba8f00f3194a3e71fdb50c0b0083
+          image: >-
+            sha256:ffe90001c8e63a712029d6ae40b619f5d3d8ba8f00f3194a3e71fdb50c0b0083
+          generation: 1
+        - created: '2022-02-11T02:28:07Z'
+          dockerImageReference: >-
+            image-registry.openshift-image-registry.svc:5000/odh-j/flask-api-git@sha256:58803a02c9c14fa6ed3ed375b368ab14637ce939afa6422ee3a097dab7401398
+          image: >-
+            sha256:58803a02c9c14fa6ed3ed375b368ab14637ce939afa6422ee3a097dab7401398
+          generation: 1
+        - created: '2022-02-11T01:49:51Z'
+          dockerImageReference: >-
+            image-registry.openshift-image-registry.svc:5000/odh-j/flask-api-git@sha256:2b9aa56fda286d8fb1abacc639cbacfdb9e01b3ced1604b99f4bc781d2f4cbbd
+          image: >-
+            sha256:2b9aa56fda286d8fb1abacc639cbacfdb9e01b3ced1604b99f4bc781d2f4cbbd
+          generation: 1
