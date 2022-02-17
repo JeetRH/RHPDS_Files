@@ -1,0 +1,52 @@
+kind: ImageStream
+apiVersion: image.openshift.io/v1
+metadata:
+  name: trevors-notebook
+  namespace: odh-j
+  uid: 9c5e5382-0a1b-4082-8c45-4c2f2d9e790e
+  resourceVersion: '1329765'
+  generation: 2
+  creationTimestamp: '2022-02-04T21:33:44Z'
+  labels:
+    component.opendatahub.io/name: jupyterhub
+    opendatahub.io/component: 'true'
+    opendatahub.io/notebook-image: 'true'
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"image.openshift.io/v1","kind":"ImageStream","metadata":{"annotations":{"opendatahub.io/notebook-image-name":"Trevors
+      Notebook"},"labels":{"component.opendatahub.io/name":"jupyterhub","opendatahub.io/component":"true","opendatahub.io/notebook-image":"true"},"name":"trevors-notebook","namespace":"odh-j"},"spec":{"lookupPolicy":{"local":false}}}
+    opendatahub.io/notebook-image-name: Trevors Notebook
+spec:
+  lookupPolicy:
+    local: false
+  tags:
+    - name: v0.1
+      annotations: null
+      from:
+        kind: ImageStreamTag
+        name: latest
+      generation: 2
+      importPolicy: {}
+      referencePolicy:
+        type: Source
+status:
+  dockerImageRepository: 'image-registry.openshift-image-registry.svc:5000/odh-j/trevors-notebook'
+  publicDockerImageRepository: >-
+    default-route-openshift-image-registry.apps.cluster-26e1.26e1.sandbox1210.opentlc.com/odh-j/trevors-notebook
+  tags:
+    - tag: latest
+      items:
+        - created: '2022-02-04T21:40:32Z'
+          dockerImageReference: >-
+            image-registry.openshift-image-registry.svc:5000/odh-j/trevors-notebook@sha256:debf128cb84e91c9d543796de97778dbe0403020096e3df052394598d862e60f
+          image: >-
+            sha256:debf128cb84e91c9d543796de97778dbe0403020096e3df052394598d862e60f
+          generation: 2
+    - tag: v0.1
+      items:
+        - created: '2022-02-04T21:40:32Z'
+          dockerImageReference: >-
+            image-registry.openshift-image-registry.svc:5000/odh-j/trevors-notebook@sha256:debf128cb84e91c9d543796de97778dbe0403020096e3df052394598d862e60f
+          image: >-
+            sha256:debf128cb84e91c9d543796de97778dbe0403020096e3df052394598d862e60f
+          generation: 2
