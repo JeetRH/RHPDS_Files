@@ -1,0 +1,81 @@
+kind: ImageStream
+apiVersion: image.openshift.io/v1
+metadata:
+  annotations:
+    opendatahub.io/notebook-image-name: Satya Test
+  resourceVersion: '1465166'
+  name: satyatest
+  uid: f9d6c38c-74b8-4998-9ac0-ca48a9ce45d6
+  creationTimestamp: '2022-02-06T23:59:12Z'
+  generation: 1
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: image.openshift.io/v1
+      time: '2022-02-06T23:59:12Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:opendatahub.io/notebook-image-name': {}
+          'f:labels':
+            .: {}
+            'f:component.opendatahub.io/name': {}
+            'f:opendatahub.io/component': {}
+            'f:opendatahub.io/notebook-image': {}
+        'f:spec':
+          'f:tags':
+            .: {}
+            'k:{"name":"v0.1"}':
+              .: {}
+              'f:annotations': {}
+              'f:from':
+                .: {}
+                'f:kind': {}
+                'f:name': {}
+              'f:generation': {}
+              'f:importPolicy': {}
+              'f:name': {}
+              'f:referencePolicy':
+                .: {}
+                'f:type': {}
+  namespace: odh-j
+  labels:
+    component.opendatahub.io/name: jupyterhub
+    opendatahub.io/component: 'true'
+    opendatahub.io/notebook-image: 'true'
+spec:
+  lookupPolicy:
+    local: false
+  tags:
+    - name: v0.1
+      annotations: null
+      from:
+        kind: ImageStreamTag
+        name: latest
+      generation: 1
+      importPolicy: {}
+      referencePolicy:
+        type: Source
+status:
+  dockerImageRepository: 'image-registry.openshift-image-registry.svc:5000/odh-j/satyatest'
+  publicDockerImageRepository: >-
+    default-route-openshift-image-registry.apps.cluster-26e1.26e1.sandbox1210.opentlc.com/odh-j/satyatest
+  tags:
+    - tag: latest
+      items:
+        - created: '2022-02-06T23:59:56Z'
+          dockerImageReference: >-
+            image-registry.openshift-image-registry.svc:5000/odh-j/satyatest@sha256:cf36f32adc3cc1ca6f390f057d4ac6685fbc603779725d99b62732585c27fcb0
+          image: >-
+            sha256:cf36f32adc3cc1ca6f390f057d4ac6685fbc603779725d99b62732585c27fcb0
+          generation: 1
+    - tag: v0.1
+      items:
+        - created: '2022-02-06T23:59:56Z'
+          dockerImageReference: >-
+            image-registry.openshift-image-registry.svc:5000/odh-j/satyatest@sha256:cf36f32adc3cc1ca6f390f057d4ac6685fbc603779725d99b62732585c27fcb0
+          image: >-
+            sha256:cf36f32adc3cc1ca6f390f057d4ac6685fbc603779725d99b62732585c27fcb0
+          generation: 1
