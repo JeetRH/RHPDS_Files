@@ -1,0 +1,122 @@
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  annotations:
+    app.openshift.io/vcs-ref: ''
+    app.openshift.io/vcs-uri: 'https://github.com/JeetRH/Iris_seldon.git'
+    openshift.io/generated-by: OpenShiftWebConsole
+  resourceVersion: '2360332'
+  name: iris-seldon-git
+  uid: 9342bce9-6009-488a-b4ca-d951356725eb
+  creationTimestamp: '2022-02-16T02:08:02Z'
+  generation: 14
+  managedFields:
+    - manager: openshift-apiserver
+      operation: Update
+      apiVersion: build.openshift.io/v1
+      time: '2022-02-16T02:08:02Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:triggers': {}
+        'f:status':
+          'f:imageChangeTriggers': {}
+          'f:lastVersion': {}
+    - manager: Mozilla
+      operation: Update
+      apiVersion: build.openshift.io/v1
+      time: '2022-02-16T15:46:28Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:app.openshift.io/vcs-ref': {}
+            'f:app.openshift.io/vcs-uri': {}
+            'f:openshift.io/generated-by': {}
+          'f:labels':
+            .: {}
+            'f:app': {}
+            'f:app.kubernetes.io/component': {}
+            'f:app.kubernetes.io/instance': {}
+            'f:app.kubernetes.io/name': {}
+            'f:app.kubernetes.io/part-of': {}
+            'f:app.openshift.io/runtime': {}
+            'f:app.openshift.io/runtime-version': {}
+        'f:spec':
+          'f:output':
+            'f:to':
+              .: {}
+              'f:kind': {}
+              'f:name': {}
+          'f:runPolicy': {}
+          'f:source':
+            'f:contextDir': {}
+            'f:git':
+              .: {}
+              'f:uri': {}
+            'f:type': {}
+          'f:strategy':
+            'f:dockerStrategy':
+              .: {}
+              'f:from':
+                .: {}
+                'f:kind': {}
+                'f:name': {}
+                'f:namespace': {}
+            'f:type': {}
+  namespace: odh-j
+  labels:
+    app: iris-seldon-git
+    app.kubernetes.io/component: iris-seldon-git
+    app.kubernetes.io/instance: iris-seldon-git
+    app.kubernetes.io/name: iris-seldon-git
+    app.kubernetes.io/part-of: example-python-app
+    app.openshift.io/runtime: python
+    app.openshift.io/runtime-version: 3.8-ubi7
+spec:
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'iris-seldon-git:latest'
+  resources: {}
+  successfulBuildsHistoryLimit: 5
+  failedBuildsHistoryLimit: 5
+  strategy:
+    type: Docker
+    dockerStrategy:
+      from:
+        kind: ImageStreamTag
+        namespace: openshift
+        name: 'python:3.8-ubi7'
+  postCommit: {}
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/JeetRH/Iris_seldon.git'
+    contextDir: /
+  triggers:
+    - type: Generic
+      generic:
+        secretReference:
+          name: iris-seldon-git-generic-webhook-secret
+    - type: GitHub
+      github:
+        secretReference:
+          name: iris-seldon-git-github-webhook-secret
+    - type: ImageChange
+      imageChange:
+        lastTriggeredImageID: >-
+          image-registry.openshift-image-registry.svc:5000/openshift/python@sha256:7fab39e4a2d880190c8285576314fdb4212feea0d79c269ebaa4dd2d1491c197
+    - type: ConfigChange
+  runPolicy: Serial
+status:
+  lastVersion: 12
+  imageChangeTriggers:
+    - lastTriggeredImageID: >-
+        image-registry.openshift-image-registry.svc:5000/openshift/python@sha256:7fab39e4a2d880190c8285576314fdb4212feea0d79c269ebaa4dd2d1491c197
+      from:
+        namespace: openshift
+        name: 'python:3.8-ubi7'
+      lastTriggerTime: null
