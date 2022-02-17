@@ -1,0 +1,113 @@
+kind: ImageStream
+apiVersion: image.openshift.io/v1
+metadata:
+  annotations:
+    app.openshift.io/vcs-ref: ''
+    app.openshift.io/vcs-uri: 'https://github.com/JeetRH/Iris_seldon.git'
+    openshift.io/generated-by: OpenShiftWebConsole
+  resourceVersion: '2361749'
+  name: iris-seldon-git
+  uid: 9e44edae-275d-4629-b100-7b39db7baa82
+  creationTimestamp: '2022-02-16T02:08:02Z'
+  generation: 1
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: image.openshift.io/v1
+      time: '2022-02-16T02:08:02Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:app.openshift.io/vcs-ref': {}
+            'f:app.openshift.io/vcs-uri': {}
+            'f:openshift.io/generated-by': {}
+          'f:labels':
+            .: {}
+            'f:app': {}
+            'f:app.kubernetes.io/component': {}
+            'f:app.kubernetes.io/instance': {}
+            'f:app.kubernetes.io/name': {}
+            'f:app.kubernetes.io/part-of': {}
+            'f:app.openshift.io/runtime': {}
+            'f:app.openshift.io/runtime-version': {}
+  namespace: odh-j
+  labels:
+    app: iris-seldon-git
+    app.kubernetes.io/component: iris-seldon-git
+    app.kubernetes.io/instance: iris-seldon-git
+    app.kubernetes.io/name: iris-seldon-git
+    app.kubernetes.io/part-of: example-python-app
+    app.openshift.io/runtime: python
+    app.openshift.io/runtime-version: 3.8-ubi7
+spec:
+  lookupPolicy:
+    local: false
+status:
+  dockerImageRepository: 'image-registry.openshift-image-registry.svc:5000/odh-j/iris-seldon-git'
+  publicDockerImageRepository: >-
+    default-route-openshift-image-registry.apps.cluster-26e1.26e1.sandbox1210.opentlc.com/odh-j/iris-seldon-git
+  tags:
+    - tag: latest
+      items:
+        - created: '2022-02-16T19:41:01Z'
+          dockerImageReference: >-
+            image-registry.openshift-image-registry.svc:5000/odh-j/iris-seldon-git@sha256:cd71fc0570e488e02dbf85feb4bfa216cde0bcd23b2cb4ede050d9d18c9fa4b5
+          image: >-
+            sha256:cd71fc0570e488e02dbf85feb4bfa216cde0bcd23b2cb4ede050d9d18c9fa4b5
+          generation: 1
+        - created: '2022-02-16T16:03:54Z'
+          dockerImageReference: >-
+            image-registry.openshift-image-registry.svc:5000/odh-j/iris-seldon-git@sha256:8da6b4d749769dcf93c6a3345404882a4bbeb7622451a00c2614091ae947682c
+          image: >-
+            sha256:8da6b4d749769dcf93c6a3345404882a4bbeb7622451a00c2614091ae947682c
+          generation: 1
+        - created: '2022-02-16T15:55:59Z'
+          dockerImageReference: >-
+            image-registry.openshift-image-registry.svc:5000/odh-j/iris-seldon-git@sha256:e655748f5bdbe0a7f7c12fa937c80a749a6cee6446c355f9626840aa7235ef5a
+          image: >-
+            sha256:e655748f5bdbe0a7f7c12fa937c80a749a6cee6446c355f9626840aa7235ef5a
+          generation: 1
+        - created: '2022-02-16T15:24:43Z'
+          dockerImageReference: >-
+            image-registry.openshift-image-registry.svc:5000/odh-j/iris-seldon-git@sha256:ddba712b65422605e7a4ce634b46aa625e7832121101e9a37093b69d17b82a16
+          image: >-
+            sha256:ddba712b65422605e7a4ce634b46aa625e7832121101e9a37093b69d17b82a16
+          generation: 1
+        - created: '2022-02-16T03:30:47Z'
+          dockerImageReference: >-
+            image-registry.openshift-image-registry.svc:5000/odh-j/iris-seldon-git@sha256:e9f67006b95f21652b7dacb309f318535fe574c4bce831a3da55448312963721
+          image: >-
+            sha256:e9f67006b95f21652b7dacb309f318535fe574c4bce831a3da55448312963721
+          generation: 1
+        - created: '2022-02-16T03:22:53Z'
+          dockerImageReference: >-
+            image-registry.openshift-image-registry.svc:5000/odh-j/iris-seldon-git@sha256:642917bfd9be0da857b48e8c3678e7a4244d50f6ddd954fa82b7dca4a56cd30c
+          image: >-
+            sha256:642917bfd9be0da857b48e8c3678e7a4244d50f6ddd954fa82b7dca4a56cd30c
+          generation: 1
+        - created: '2022-02-16T03:04:15Z'
+          dockerImageReference: >-
+            image-registry.openshift-image-registry.svc:5000/odh-j/iris-seldon-git@sha256:67f8a02ac97bed04be476ff9f92c53e4ced8c1ef1ff444bb584419fde29cb5cc
+          image: >-
+            sha256:67f8a02ac97bed04be476ff9f92c53e4ced8c1ef1ff444bb584419fde29cb5cc
+          generation: 1
+        - created: '2022-02-16T02:36:12Z'
+          dockerImageReference: >-
+            image-registry.openshift-image-registry.svc:5000/odh-j/iris-seldon-git@sha256:0d28f60f9d35b044606398b2d5c0dabab5cb4f849368a4c478bde5c22e8bd249
+          image: >-
+            sha256:0d28f60f9d35b044606398b2d5c0dabab5cb4f849368a4c478bde5c22e8bd249
+          generation: 1
+        - created: '2022-02-16T02:28:54Z'
+          dockerImageReference: >-
+            image-registry.openshift-image-registry.svc:5000/odh-j/iris-seldon-git@sha256:095e2a7f93bff8a676aaaef138b16960b46aec3e97823b16a46921226eaac549
+          image: >-
+            sha256:095e2a7f93bff8a676aaaef138b16960b46aec3e97823b16a46921226eaac549
+          generation: 1
+        - created: '2022-02-16T02:13:04Z'
+          dockerImageReference: >-
+            image-registry.openshift-image-registry.svc:5000/odh-j/iris-seldon-git@sha256:13abb8d9fa689b781e49752c1af6196bdb50962788b63f820fb7b6d34ebba3bb
+          image: >-
+            sha256:13abb8d9fa689b781e49752c1af6196bdb50962788b63f820fb7b6d34ebba3bb
+          generation: 1
