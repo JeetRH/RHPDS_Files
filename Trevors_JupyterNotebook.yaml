@@ -1,0 +1,93 @@
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: trevors-notebook
+  namespace: odh-j
+  uid: 5d96a903-bfd9-4012-a052-9c167ee5d0a4
+  resourceVersion: '1312851'
+  generation: 2
+  creationTimestamp: '2022-02-04T21:37:20Z'
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"build.openshift.io/v1","kind":"BuildConfig","metadata":{"annotations":{},"name":"trevors-notebook","namespace":"odh-j"},"spec":{"output":{"to":{"kind":"ImageStreamTag","name":"trevors-notebook:latest"}},"source":{"contextDir":"notebook","git":{"ref":"main","uri":"https://github.com/strangiato/jupyter-test.git"},"type":"Git"},"strategy":{"dockerStrategy":{"from":{"kind":"ImageStreamTag","name":"s2i-minimal-notebook:v0.0.15"}},"type":"Docker"},"triggers":[{"imageChange":{},"type":"ImageChange"},{"type":"ConfigChange"}]}}
+  managedFields:
+    - manager: kubectl-client-side-apply
+      operation: Update
+      apiVersion: build.openshift.io/v1
+      time: '2022-02-04T21:37:20Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:kubectl.kubernetes.io/last-applied-configuration': {}
+        'f:spec':
+          'f:output':
+            'f:to':
+              .: {}
+              'f:kind': {}
+              'f:name': {}
+          'f:runPolicy': {}
+          'f:source':
+            'f:contextDir': {}
+            'f:git':
+              .: {}
+              'f:ref': {}
+              'f:uri': {}
+            'f:type': {}
+          'f:strategy':
+            'f:dockerStrategy':
+              .: {}
+              'f:from':
+                .: {}
+                'f:kind': {}
+                'f:name': {}
+            'f:type': {}
+    - manager: openshift-apiserver
+      operation: Update
+      apiVersion: build.openshift.io/v1
+      time: '2022-02-04T21:37:20Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:triggers': {}
+        'f:status':
+          'f:imageChangeTriggers': {}
+          'f:lastVersion': {}
+spec:
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'trevors-notebook:latest'
+  resources: {}
+  successfulBuildsHistoryLimit: 5
+  failedBuildsHistoryLimit: 5
+  strategy:
+    type: Docker
+    dockerStrategy:
+      from:
+        kind: ImageStreamTag
+        name: 's2i-minimal-notebook:v0.0.15'
+  postCommit: {}
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/strangiato/jupyter-test.git'
+      ref: main
+    contextDir: notebook
+  triggers:
+    - type: ImageChange
+      imageChange:
+        lastTriggeredImageID: >-
+          quay.io/thoth-station/s2i-minimal-notebook@sha256:207f63a8c71146ffe61a561082fad4072463992318bfaf7ae5f65a7c4e23a02a
+    - type: ConfigChange
+  runPolicy: Serial
+status:
+  lastVersion: 1
+  imageChangeTriggers:
+    - lastTriggeredImageID: >-
+        quay.io/thoth-station/s2i-minimal-notebook@sha256:207f63a8c71146ffe61a561082fad4072463992318bfaf7ae5f65a7c4e23a02a
+      from:
+        name: 's2i-minimal-notebook:v0.0.15'
+      lastTriggerTime: '2022-02-04T21:37:20Z'
