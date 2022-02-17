@@ -1,0 +1,84 @@
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: satyatest
+  namespace: odh-j
+  uid: ad406ada-4be3-414d-91f6-3f66e7c7f9cb
+  resourceVersion: '1463346'
+  generation: 2
+  creationTimestamp: '2022-02-06T23:56:53Z'
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: build.openshift.io/v1
+      time: '2022-02-06T23:56:53Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:output':
+            'f:to':
+              .: {}
+              'f:kind': {}
+              'f:name': {}
+          'f:runPolicy': {}
+          'f:source':
+            'f:git':
+              .: {}
+              'f:ref': {}
+              'f:uri': {}
+            'f:type': {}
+          'f:strategy':
+            'f:dockerStrategy':
+              .: {}
+              'f:from':
+                .: {}
+                'f:kind': {}
+                'f:name': {}
+            'f:type': {}
+    - manager: openshift-apiserver
+      operation: Update
+      apiVersion: build.openshift.io/v1
+      time: '2022-02-06T23:56:53Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:triggers': {}
+        'f:status':
+          'f:imageChangeTriggers': {}
+          'f:lastVersion': {}
+spec:
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'satyatest:latest'
+  resources: {}
+  successfulBuildsHistoryLimit: 5
+  failedBuildsHistoryLimit: 5
+  strategy:
+    type: Docker
+    dockerStrategy:
+      from:
+        kind: ImageStreamTag
+        name: 's2i-minimal-notebook:v0.0.15'
+  postCommit: {}
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/JeetRH/jupyterImagewithDocker.git'
+      ref: master
+  triggers:
+    - type: ImageChange
+      imageChange:
+        lastTriggeredImageID: >-
+          quay.io/thoth-station/s2i-minimal-notebook@sha256:207f63a8c71146ffe61a561082fad4072463992318bfaf7ae5f65a7c4e23a02a
+    - type: ConfigChange
+  runPolicy: Serial
+status:
+  lastVersion: 1
+  imageChangeTriggers:
+    - lastTriggeredImageID: >-
+        quay.io/thoth-station/s2i-minimal-notebook@sha256:207f63a8c71146ffe61a561082fad4072463992318bfaf7ae5f65a7c4e23a02a
+      from:
+        name: 's2i-minimal-notebook:v0.0.15'
+      lastTriggerTime: '2022-02-06T23:56:53Z'
